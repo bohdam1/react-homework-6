@@ -6,14 +6,20 @@ import { Provider } from 'react-redux';
 import {store} from "./redux/store"
 import { PersistGate } from 'redux-persist/integration/react';
 import {persistor} from "./redux/store"
+import {BrowserRouter} from "react-router-dom"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <BrowserRouter basename="react-homework-6">
      <Provider store={store}>
      <PersistGate loading={null} persistor={persistor}>
         <App />
      </PersistGate>
     </Provider>
+    
+    </BrowserRouter>
+  
+
   </React.StrictMode>
 );
